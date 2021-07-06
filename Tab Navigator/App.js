@@ -1,11 +1,11 @@
-import React from "react";
-import { StyleSheet, Text, View, Button, Easing } from "react-native";
-import { NavigationNativeContainer } from "@react-navigation/native";
-import { createStackNavigator, TransitionPresets, CardStyleInterpolators } from "@react-navigation/stack";
-import { useIsFocused } from "@react-navigation/core";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import React from 'react';
+import { StyleSheet, Text, View, Button, Easing } from 'react-native';
+import { NavigationNativeContainer } from '@react-navigation/native';
+import { createStackNavigator, TransitionPresets, CardStyleInterpolators } from '@react-navigation/stack';
+import { useIsFocused } from '@react-navigation/core';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -26,7 +26,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>HomeScreen</Text>
-      <Button title="Go To Details Screen" onPress={() => navigation.navigate("Details")} />
+      <Button title="19BCE1004 - DETAILS" onPress={() => navigation.navigate("Details")} />
     </View>
   );
 };
@@ -35,7 +35,7 @@ const SettingsScreen = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text style={{ color: isFocused ? "green" : "black" }}>SettingsScreen</Text>
-      <Button title="Go To Home Screen" onPress={() => navigation.goBack()} />
+      <Button title="19BCE1004 - HOME" onPress={() => navigation.goBack()} />
     </View>
   );
 };
@@ -60,8 +60,8 @@ const HomeStackNavigator = ({ navigation, route }) => {
   }
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={HomeScreen} />
-      <HomeStack.Screen name="Details" component={DetailsScreen} />
+      <HomeStack.Screen name="19BCE1004 - Home" component={HomeScreen} />
+      <HomeStack.Screen name="19BCE1004 - Details" component={DetailsScreen} />
     </HomeStack.Navigator>
   );
 };
@@ -72,20 +72,20 @@ const HomeTabNavigator = ({ navigation, route }) => {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           let iconName;
-          if (route.name == "Home") {
+          if (route.name == "19BCE1004 - Home") {
             iconName = "ios-home";
-          } else if (route.name == "Feed") {
+          } else if (route.name == "19BCE1004 - Feed") {
             iconName = "logo-rss";
-          } else if (route.name == "Settings") {
+          } else if (route.name == "19BCE1004 - Settings") {
             iconName = "ios-settings";
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         }
       })}
     >
-      <Tab.Screen name="Home" component={HomeStackNavigator} />
-      <Tab.Screen name="Feed" component={FeedScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen name="19BCE1004 - Home" component={HomeStackNavigator} />
+      <Tab.Screen name="19BCE1004 - Feed" component={FeedScreen} />
+      <Tab.Screen name="19BCE1004 - Settings" component={SettingsScreen} />
     </Tab.Navigator>
   );
 };
@@ -152,10 +152,10 @@ export default function App() {
             title: getHeaderTitle(route),
             headerShown: shouldHeaderBeShown(route)
           })}
-          name="Home"
+          name="19BCE1004 - Home"
           component={HomeTabNavigator}
         />
-        <Stack.Screen name="Settings" component={SettingsScreen} />
+        <Stack.Screen name="19BCE1004 - Settings" component={SettingsScreen} />
       </Stack.Navigator>
     </NavigationNativeContainer>
   );
@@ -164,8 +164,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
